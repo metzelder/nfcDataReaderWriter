@@ -35,27 +35,7 @@ public class MainPage extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.fragment_main_page);
-
-		  // Create an ad.
-	    adView = new AdView(this);
-	    adView.setAdSize(AdSize.BANNER);
-	    adView.setAdUnitId(AD_UNIT_ID);
-
-	    // Add the AdView to the view hierarchy. The view will have no size
-	    // until the ad is loaded.
-	    RelativeLayout layout = (RelativeLayout) findViewById(R.id.relative);
-	    layout.addView(adView);
-
-	    // Create an ad request. Check logcat output for the hashed device ID to
-	    // get test ads on a physical device.
-	    AdRequest adRequest = new AdRequest.Builder()
-	        .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-	        .addTestDevice("4df1dccd39006f0f")
-	        .build();
-
-	    // Start loading the ad in the background.
-	    adView.loadAd(adRequest);
-
+		
 		writeNFCButton = (Button) findViewById(R.id.writeNFC);
 		openingMessage = (TextView) findViewById(R.id.openingMessage);
 
